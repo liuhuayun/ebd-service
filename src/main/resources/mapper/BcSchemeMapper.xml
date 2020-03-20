@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcSchemeMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcScheme">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="schemeId" jdbcType="VARCHAR" property="schemeid" />
+    <result column="schemeTitle" jdbcType="VARCHAR" property="schemetitle" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="flowId" jdbcType="VARCHAR" property="flowid" />
+    <result column="totalArea" jdbcType="DECIMAL" property="totalarea" />
+    <result column="totalPopu" jdbcType="DECIMAL" property="totalpopu" />
+    <result column="areaPercent" jdbcType="DECIMAL" property="areapercent" />
+    <result column="popuPercent" jdbcType="DECIMAL" property="popupercent" />
+    <result column="auditResult" jdbcType="INTEGER" property="auditresult" />
+    <result column="auditOpinion" jdbcType="VARCHAR" property="auditopinion" />
+    <result column="auditTime" jdbcType="TIMESTAMP" property="audittime" />
+    <result column="auditUser" jdbcType="VARCHAR" property="audituser" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="ebmId" jdbcType="VARCHAR" property="ebmid" />
+    <result column="programId" jdbcType="VARCHAR" property="programid" />
+    <result column="ebdId" jdbcType="VARCHAR" property="ebdid" />
+    <result column="infoId" jdbcType="VARCHAR" property="infoid" />
+    <result column="schemeType" jdbcType="INTEGER" property="schemetype" />
+    <result column="ebrPopu" jdbcType="DECIMAL" property="ebrpopu" />
+    <result column="ebrArea" jdbcType="DECIMAL" property="ebrarea" />
+    <result column="planId" jdbcType="VARCHAR" property="planid" />
+  </resultMap>
+</mapper>

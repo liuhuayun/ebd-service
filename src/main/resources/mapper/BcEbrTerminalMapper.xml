@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbrTerminalMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbrTerminal">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="terminalEbrId" jdbcType="BIGINT" property="terminalebrid" />
+    <result column="terminalEbrName" jdbcType="VARCHAR" property="terminalebrname" />
+    <result column="relatedPsEbrId" jdbcType="VARCHAR" property="relatedpsebrid" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="terminalState" jdbcType="TINYINT" property="terminalstate" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="syncFlag" jdbcType="TINYINT" property="syncflag" />
+    <result column="statusSyncFlag" jdbcType="TINYINT" property="statussyncflag" />
+  </resultMap>
+</mapper>

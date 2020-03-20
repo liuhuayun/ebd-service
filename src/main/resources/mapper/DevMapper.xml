@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.DevMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.Dev">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="dev_id" jdbcType="CHAR" property="devId" />
+    <result column="dev_name" jdbcType="VARCHAR" property="devName" />
+    <result column="dev_sn" jdbcType="VARCHAR" property="devSn" />
+    <result column="dev_type" jdbcType="VARCHAR" property="devType" />
+    <result column="software_version" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="hardware_version" jdbcType="VARCHAR" property="hardwareVersion" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="volume" jdbcType="TINYINT" property="volume" />
+    <result column="dev_ip" jdbcType="VARCHAR" property="devIp" />
+    <result column="mac" jdbcType="VARCHAR" property="mac" />
+    <result column="nat_ip" jdbcType="VARCHAR" property="natIp" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="enabled" jdbcType="BIT" property="enabled" />
+    <result column="org_id" jdbcType="CHAR" property="orgId" />
+    <result column="system_id" jdbcType="CHAR" property="systemId" />
+    <result column="bind_time" jdbcType="TIMESTAMP" property="bindTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="online_status" jdbcType="VARCHAR" property="onlineStatus" />
+    <result column="biz_status" jdbcType="INTEGER" property="bizStatus" />
+    <result column="biz_content" jdbcType="VARCHAR" property="bizContent" />
+    <result column="hardware_status" jdbcType="INTEGER" property="hardwareStatus" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+    <result column="dn_type" jdbcType="BIT" property="dnType" />
+    <result column="maintain_by" jdbcType="VARCHAR" property="maintainBy" />
+    <result column="contact" jdbcType="CHAR" property="contact" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+</mapper>

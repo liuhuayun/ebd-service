@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.DeviceMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.Device">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="device_id" jdbcType="VARCHAR" property="deviceId" />
+    <result column="device_name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="resource_code" jdbcType="VARCHAR" property="resourceCode" />
+    <result column="hardware_version" jdbcType="VARCHAR" property="hardwareVersion" />
+    <result column="software_version" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="manufacturer" jdbcType="VARCHAR" property="manufacturer" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="volume" jdbcType="INTEGER" property="volume" />
+    <result column="fault_info" jdbcType="VARCHAR" property="faultInfo" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="image_urls" jdbcType="VARCHAR" property="imageUrls" />
+    <result column="fm_keep_mode" jdbcType="INTEGER" property="fmKeepMode" />
+    <result column="fm_frequency" jdbcType="VARCHAR" property="fmFrequency" />
+    <result column="device_ip" jdbcType="VARCHAR" property="deviceIp" />
+    <result column="ip_mask" jdbcType="VARCHAR" property="ipMask" />
+    <result column="gateway" jdbcType="VARCHAR" property="gateway" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="device_type" jdbcType="INTEGER" property="deviceType" />
+    <result column="sub_type" jdbcType="VARCHAR" property="subType" />
+    <result column="passback_mode" jdbcType="INTEGER" property="passbackMode" />
+    <result column="passback_ip" jdbcType="VARCHAR" property="passbackIp" />
+    <result column="passback_period" jdbcType="VARCHAR" property="passbackPeriod" />
+    <result column="power_amplifier" jdbcType="INTEGER" property="powerAmplifier" />
+    <result column="cert_id" jdbcType="VARCHAR" property="certId" />
+    <result column="cert_content" jdbcType="VARCHAR" property="certContent" />
+    <result column="adapter_id" jdbcType="VARCHAR" property="adapterId" />
+    <result column="module_id" jdbcType="VARCHAR" property="moduleId" />
+    <result column="certh" jdbcType="VARCHAR" property="certh" />
+    <result column="area_code" jdbcType="VARCHAR" property="areaCode" />
+  </resultMap>
+</mapper>

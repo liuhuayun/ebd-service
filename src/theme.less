@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html{
+  height: 100%;
+}
+body {
+  font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  // background: radial-gradient(#134650, #0d111c, ); /* 标准的语法（必须放在最后） */
+	background-image: url(assets/commonbg.png);
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #042c46;
+}
+::-webkit-scrollbar-track {
+  background-color: #bee1eb;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  &+& {
+    margin-left: 5px;
+  }
+  &+[class^=el-icon-] {
+    margin-left: 10px;
+  }
+}
+.el-button+.link {
+  margin-left: 8px;
+}
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 5px;
+  vertical-align: -0.3em;
+  fill: currentColor;
+  overflow: hidden;
+  margin-right: 5px;
+}
+.pagination {
+  background: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+.el-card {
+  .el-form-item {
+    margin-bottom: 0 !important;
+    display: flex;
+    .el-form-item__content {
+      flex: 1;
+      >.el-select {
+        width: 100%;
+      }
+    }
+  }
+  .el-row+.el-row {
+    margin-top: 15px;
+  }
+  .el-dropdown {
+    margin-left: 8px;
+  }
+}
+.el-form-item {
+  margin-bottom: 0;
+  &+& {
+    margin-bottom: 22px;
+  }
+}
+.charts {
+  height: 100%;
+  min-height: 100px;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+}
+table {
+  [class^=el-icon-] {
+    color: #606266;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+.el-breadcrumb {
+  margin-bottom: 10px;
+}
+.el-breadcrumb__item:last-child {
+  .el-breadcrumb__inner {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.el-breadcrumb__inner {
+  color: #fff;
+}
+.search-card {
+  margin: 10px 0;
+  .el-form-item__label {
+    color: #fff;
+  }
+  .el-form {
+    padding: 10px;
+  }
+  .el-form-item {
+    margin-bottom: 0 !important;
+    display: inline-block !important;
+    .el-form-item__content {
+      >.el-select {
+        width: 100%;
+      }
+    }
+  }
+  .el-button {
+    background: #019eff;
+    border: 1px solid #019eff;
+  }
+}
+.el-table {
+  th,
+  tr {
+    background-color: #000;
+    color: #fff;
+  }
+}
+.pagination {
+  background-color: #000;
+}
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+  background-color: #000;
+}
+.el-icon-loading {
+  font-size: 26px;
+}

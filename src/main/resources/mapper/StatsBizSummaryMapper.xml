@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.StatsBizSummaryMapper">
+	<resultMap id="BaseResultMap" type="cn.comtom.cbs.dto.StatsBizSummaryDto">
+		<!-- WARNING - @mbg.generated -->
+		<result column="summary_id" jdbcType="CHAR" property="summaryId" />
+		<result column="org_id" jdbcType="CHAR" property="orgId" />
+		<result column="biz_date" jdbcType="TIMESTAMP" property="bizDate" />
+		<result column="schedule_quantity" jdbcType="INTEGER" property="scheduleQuantity" />
+		<result column="live_quantity" jdbcType="INTEGER" property="liveQuantity" />
+		 <result column="day" jdbcType="VARCHAR" property="day" />
+	</resultMap>
+
+	<select id="findByDayBizStatus" resultMap="BaseResultMap"
+		resultType="cn.comtom.cbs.dto.StatsBizSummaryDto">
+		SELECT DATE_FORMAT(biz_date,'%Y-%m-%d') as day,
+		SUM(schedule_quantity) as schedule_quantity,SUM(live_quantity) as live_quantity from
+		stats_biz_summary
+		WHERE 1=1
+		<if test="orgId != null and orgId != ''">
+			AND org_id=#{orgId}
+		</if>	
+		<if test="beginDate != null and beginDate != ''">
+			AND DATE_FORMAT(biz_date,'%Y-%m-%d') &gt;= #{beginDate}
+		</if>
+		<if test="endDate != null and endDate != ''">
+		    AND DATE_FORMAT(biz_date,'%Y-%m-%d') &lt;= #{endDate}
+		</if>
+		GROUP BY DATE_FORMAT(biz_date,'%Y-%m-%d')
+	</select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcDispatchFlowMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcDispatchFlow">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="flowId" jdbcType="VARCHAR" property="flowid" />
+    <result column="flowStage" jdbcType="TINYINT" property="flowstage" />
+    <result column="flowState" jdbcType="TINYINT" property="flowstate" />
+    <result column="relatedProgramId" jdbcType="VARCHAR" property="relatedprogramid" />
+    <result column="relatedEbdId" jdbcType="VARCHAR" property="relatedebdid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcAccessInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcAccessInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="infoId" jdbcType="VARCHAR" property="infoid" />
+    <result column="ebdId" jdbcType="VARCHAR" property="ebdid" />
+    <result column="relatedEbmId" jdbcType="VARCHAR" property="relatedebmid" />
+    <result column="relatedEbIId" jdbcType="VARCHAR" property="relatedebiid" />
+    <result column="nodeId" jdbcType="VARCHAR" property="nodeid" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+    <result column="eventType" jdbcType="VARCHAR" property="eventtype" />
+    <result column="severity" jdbcType="TINYINT" property="severity" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="infoType" jdbcType="INTEGER" property="infotype" />
+    <result column="infoTitle" jdbcType="VARCHAR" property="infotitle" />
+    <result column="infoLevel" jdbcType="INTEGER" property="infolevel" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="msgLanguageCode" jdbcType="VARCHAR" property="msglanguagecode" />
+    <result column="auditResult" jdbcType="TINYINT" property="auditresult" />
+    <result column="auditOpinion" jdbcType="VARCHAR" property="auditopinion" />
+    <result column="auditTime" jdbcType="TIMESTAMP" property="audittime" />
+    <result column="auditor" jdbcType="VARCHAR" property="auditor" />
+    <result column="infoContent" jdbcType="LONGVARCHAR" property="infocontent" />
+  </resultMap>
+</mapper>

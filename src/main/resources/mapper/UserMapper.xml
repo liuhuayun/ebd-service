@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="user_id" jdbcType="CHAR" property="userId" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="org_id" jdbcType="CHAR" property="orgId" />
+    <result column="system_id" jdbcType="CHAR" property="systemId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+    <result column="deleted" jdbcType="BIT" property="deleted" />
+    <result column="enabled" jdbcType="BIT" property="able" />
+  </resultMap>
+  
+  <resultMap id="AudienceSummaryMap" type="cn.comtom.cbs.dto.StatsUserDto">
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+  </resultMap>
+  
+    <select id="findByUserName" resultMap="BaseResultMap" resultType="cn.comtom.cbs.model.User">
+		select * from t_user where username=#{username}
+	</select>
+  
+   <select id="findByPeriod" resultMap="AudienceSummaryMap" resultType="cn.comtom.cbs.dto.StatsUserDto">
+		select
+		<if test="period == 'day'">
+			DATE_FORMAT(s.login_date,'%Y-%m-%d') as time,
+		</if>
+		<if test="period == 'week'">
+			DATE_FORMAT(s.login_date,'%Y-%u') as time,
+		</if>
+		<if test="period == 'month'">
+			DATE_FORMAT(s.login_date,'%Y-%m') as time,
+		</if>
+		<if test="period == 'year'">
+			DATE_FORMAT(s.login_date,'%Y') as time,
+		</if>
+		SUM(1) count
+		from t_user t,stats_user_login s where t.org_id = #{orgId} And t.user_id=s.user_id And
+		<if test="period == 'day'">
+			DATE_FORMAT(s.login_date,'%Y-%m-%d')
+		</if>
+		<if test="period == 'week'">
+			DATE_FORMAT(s.login_date,'%Y-%u')
+		</if>
+		<if test="period == 'month'">
+			DATE_FORMAT(s.login_date,'%Y-%m')
+		</if>
+		<if test="period == 'year'">
+			DATE_FORMAT(s.login_date,'%Y')
+		</if>
+		 BETWEEN #{beginDate} AND #{endDate} GROUP BY time
+	</select>
+	
+	 <select id="findByIncreaseUserPeriod" resultMap="AudienceSummaryMap" resultType="cn.comtom.cbs.dto.StatsUserDto">
+		select
+		<if test="period == 'day'">
+			DATE_FORMAT(create_time,'%Y-%m-%d') as time,
+		</if>
+		<if test="period == 'week'">
+			DATE_FORMAT(create_time,'%Y-%u') as time,
+		</if>
+		<if test="period == 'month'">
+			DATE_FORMAT(create_time,'%Y-%m') as time,
+		</if>
+		<if test="period == 'year'">
+			DATE_FORMAT(create_time,'%Y') as time,
+		</if>
+		SUM(1) count
+		from t_user where org_id = #{orgId} And
+		<if test="period == 'day'">
+			DATE_FORMAT(create_time,'%Y-%m-%d')
+		</if>
+		<if test="period == 'week'">
+			DATE_FORMAT(create_time,'%Y-%u')
+		</if>
+		<if test="period == 'month'">
+			DATE_FORMAT(create_time,'%Y-%m')
+		</if>
+		<if test="period == 'year'">
+			DATE_FORMAT(create_time,'%Y')
+		</if>
+		 BETWEEN #{beginDate} AND #{endDate} GROUP BY time
+	</select>
+</mapper>

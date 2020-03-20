@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.StatsSecuritySummaryMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.StatsSecuritySummary">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="security_id" jdbcType="CHAR" property="securityId" />
+    <result column="virus_detection" jdbcType="VARCHAR" property="virusDetection" />
+    <result column="network_defense" jdbcType="VARCHAR" property="networkDefense" />
+    <result column="functional_service" jdbcType="VARCHAR" property="functionalService" />
+    <result column="certificate_authorities" jdbcType="VARCHAR" property="certificateAuthorities" />
+    <result column="encipherment_mechanisms" jdbcType="VARCHAR" property="enciphermentMechanisms" />
+    <result column="scan_time" jdbcType="TIMESTAMP" property="scanTime" />
+    <result column="op_user" jdbcType="CHAR" property="opUser" />
+  </resultMap>
+</mapper>

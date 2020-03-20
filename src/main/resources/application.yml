@@ -1,0 +1,81 @@
+dynamic:
+  host-ip: 192.168.7.200
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+  output:
+    ansi:
+      enabled: always
+  redis:
+    database: 0
+    host: ${dynamic.host-ip}
+    port: 6379
+    password: 123456
+    timeout: 2000
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+
+security:
+  oauth2:
+    client:
+      accessTokenValidateSeconds: 64800
+      client-id: myapp
+      client-secret: myappsecret
+
+mybatis:
+  mapperLocations: classpath:mybatis/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+server:
+  tomcat:
+    basedir: /tomcat
+    uri-encoding: UTF-8
+  port: 8688
+
+business:
+  server:
+    # baseUrl: http://cbs.comtom.cn/safeRest
+    # baseUrl: http://192.168.111.154:8090/safeRest
+    # baseUrl: http://114.115.255.8:8090/safeRest
+    baseUrl: http://${dynamic.host-ip}:8688
+
+---
+spring:
+  profiles: prod
+  datasource:
+#    url: jdbc:mysql://mysql-server:3306/exp?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+#    username: root
+#    password: 123456
+    url: jdbc:mysql://${dynamic.host-ip}:3306/cz_eb_dev?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  flyway:
+    baseline-on-migrate: true
+    enabled: false
+
+
+---
+spring:
+  profiles: aliyun
+  datasource:
+    url: jdbc:mysql://mysql-server:3306/ebd?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
+---
+spring:
+  profiles: myaliyun
+  datasource:
+    url: jdbc:mysql://47.107.254.228:3306/exp?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: zcq
+    password: 123

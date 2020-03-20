@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbmMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbm">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ebmId" jdbcType="VARCHAR" property="ebmid" />
+    <result column="ebmVersion" jdbcType="VARCHAR" property="ebmversion" />
+    <result column="relatedEbmId" jdbcType="VARCHAR" property="relatedebmid" />
+    <result column="relatedEbIId" jdbcType="VARCHAR" property="relatedebiid" />
+    <result column="msgType" jdbcType="INTEGER" property="msgtype" />
+    <result column="sendName" jdbcType="VARCHAR" property="sendname" />
+    <result column="senderCode" jdbcType="VARCHAR" property="sendercode" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+    <result column="eventType" jdbcType="VARCHAR" property="eventtype" />
+    <result column="severity" jdbcType="TINYINT" property="severity" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="msgLanguageCode" jdbcType="VARCHAR" property="msglanguagecode" />
+    <result column="msgTitle" jdbcType="VARCHAR" property="msgtitle" />
+    <result column="areaCode" jdbcType="VARCHAR" property="areacode" />
+    <result column="programNum" jdbcType="INTEGER" property="programnum" />
+    <result column="broadcastState" jdbcType="TINYINT" property="broadcaststate" />
+    <result column="ebmState" jdbcType="TINYINT" property="ebmstate" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="sendFlag" jdbcType="TINYINT" property="sendflag" />
+    <result column="timeOut" jdbcType="TINYINT" property="timeout" />
+    <result column="auditResult" jdbcType="INTEGER" property="auditresult" />
+    <result column="auditOpinion" jdbcType="VARCHAR" property="auditopinion" />
+    <result column="auditTime" jdbcType="TIMESTAMP" property="audittime" />
+    <result column="auditUser" jdbcType="VARCHAR" property="audituser" />
+    <result column="schemeId" jdbcType="VARCHAR" property="schemeid" />
+    <result column="flowId" jdbcType="VARCHAR" property="flowid" />
+    <result column="accessState" jdbcType="TINYINT" property="accessstate" />
+    <result column="audioPath" jdbcType="VARCHAR" property="audiopath" />
+    <result column="msgDesc" jdbcType="LONGVARCHAR" property="msgdesc" />
+  </resultMap>
+</mapper>

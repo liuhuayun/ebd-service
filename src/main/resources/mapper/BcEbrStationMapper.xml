@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbrStationMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbrStation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ebrStId" jdbcType="VARCHAR" property="ebrstid" />
+    <result column="resType" jdbcType="VARCHAR" property="restype" />
+    <result column="platLevel" jdbcType="TINYINT" property="platlevel" />
+    <result column="areaCode" jdbcType="VARCHAR" property="areacode" />
+    <result column="stType" jdbcType="VARCHAR" property="sttype" />
+    <result column="ebrStName" jdbcType="VARCHAR" property="ebrstname" />
+    <result column="subResType" jdbcType="VARCHAR" property="subrestype" />
+    <result column="ebrPsId" jdbcType="VARCHAR" property="ebrpsid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phoneNumber" jdbcType="VARCHAR" property="phonenumber" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="syncFlag" jdbcType="TINYINT" property="syncflag" />
+    <result column="statusSyncFlag" jdbcType="TINYINT" property="statussyncflag" />
+    <result column="stationState" jdbcType="TINYINT" property="stationstate" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+</mapper>

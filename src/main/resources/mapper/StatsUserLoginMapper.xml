@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.StatsUserLoginMapper">
+	<resultMap id="BaseResultMap"
+		type="cn.comtom.cbs.model.StatsUserLogin">
+		<!-- WARNING - @mbg.generated -->
+		<result column="login_id" jdbcType="CHAR" property="loginId" />
+		<result column="user_id" jdbcType="CHAR" property="userId" />
+		<result column="login_date" jdbcType="DATE"
+			property="loginDate" />
+		<result column="client_type" jdbcType="VARCHAR"
+			property="clientType" />
+	</resultMap>
+
+	<resultMap id="StatsUserDtoMap"
+		type="cn.comtom.cbs.dto.StatsUserDto">
+		<result column="time" jdbcType="VARCHAR" property="time" />
+		<result column="count" jdbcType="INTEGER" property="count" />
+	</resultMap>
+
+	<select id="findByDay" resultMap="StatsUserDtoMap"
+		resultType="cn.comtom.cbs.dto.StatsUserDto">
+		SELECT r.time,
+		SUM(1) count from
+		(select distinct DATE_FORMAT(s.login_date,'%Y-%m-%d')
+		as time,
+		s.user_id, SUM(1) count from
+		stats_user_login s
+		<if test="orgId != null and orgId != ''">
+			,t_user t AND org_id=#{orgId}
+		</if>
+		where 1=1
+		<if test="orgId != null and orgId != ''">
+		    AND t.org_id = #{orgId} AND t.user_id=s.user_id 
+		</if>
+		<if test="beginDate != null and beginDate != ''">
+			AND DATE_FORMAT(s.login_date,'%Y-%m-%d') &gt;= #{beginDate}
+		</if>
+		<if test="endDate != null and endDate != ''">
+		    AND DATE_FORMAT(s.login_date,'%Y-%m-%d') &lt;= #{endDate}
+		</if>
+		GROUP BY DATE_FORMAT(s.login_date,'%Y-%m-%d'),s.user_id) as r GROUP BY r.time
+	</select>
+</mapper>

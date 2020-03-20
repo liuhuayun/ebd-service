@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbrPlatformMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbrPlatform">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="psEbrId" jdbcType="VARCHAR" property="psebrid" />
+    <result column="psUrl" jdbcType="VARCHAR" property="psurl" />
+    <result column="psEbrName" jdbcType="VARCHAR" property="psebrname" />
+    <result column="psState" jdbcType="TINYINT" property="psstate" />
+    <result column="areaCode" jdbcType="VARCHAR" property="areacode" />
+    <result column="psType" jdbcType="VARCHAR" property="pstype" />
+    <result column="resType" jdbcType="VARCHAR" property="restype" />
+    <result column="subResType" jdbcType="VARCHAR" property="subrestype" />
+    <result column="parentPsEbrId" jdbcType="VARCHAR" property="parentpsebrid" />
+    <result column="psAddress" jdbcType="VARCHAR" property="psaddress" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="phoneNumber" jdbcType="VARCHAR" property="phonenumber" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="platLevel" jdbcType="TINYINT" property="platlevel" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="syncFlag" jdbcType="TINYINT" property="syncflag" />
+    <result column="square" jdbcType="DECIMAL" property="square" />
+    <result column="population" jdbcType="DECIMAL" property="population" />
+    <result column="statusSyncFlag" jdbcType="INTEGER" property="statussyncflag" />
+    <result column="orgName" jdbcType="VARCHAR" property="orgname" />
+    <result column="orgType" jdbcType="VARCHAR" property="orgtype" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  
+      <select id="getEbrInfoById" resultType="cn.comtom.cbs.dto.ebm.EbrDto">
+        SELECT
+            ebr.*
+        FROM
+            (
+                SELECT
+                    B.areaCode,
+                    B.bsEbrId AS ebrId,
+                    b.bsName AS ebrName,
+                    b.bsState AS ebrState,
+                    b.subResType AS ebrType,
+                    b.bsUrl AS ebrUrl,
+                    b.createTime,
+                    b.latitude,
+                    b.longitude,
+                    b.population,
+                    b.square,
+                    b.updateTime
+                FROM
+                    bc_ebr_broadcast B
+                UNION ALL
+                    SELECT
+                        p.areaCode,
+                        p.psEbrId AS ebrId,
+                        p.psEbrName AS ebrName,
+                        p.psState AS ebrState,
+                        p.subResType AS ebrType,
+                        p.psUrl AS ebrUrl,
+                        p.createTime,
+                        p.latitude,
+                        p.longitude,
+                        p.population,
+                        p.square,
+                        p.updateTime
+                    FROM
+                        bc_ebr_platform p
+                  UNION ALL
+                    SELECT
+					    a.areaCode AS areaCode,
+                        a.ebrAsId AS ebrId,
+                        a.ebrAsName AS ebrName,
+                        a.adapterState AS ebrState,
+                        a.subResType AS ebrType,
+                        a.url AS ebrUrl,
+                        a.createTime,
+                        a.latitude,
+                        a.longitude,
+                        '' AS population,
+                        '' AS square,
+                        a.updateTime
+                    FROM
+                        bc_ebr_adapter a
+                 UNION ALL
+                    SELECT
+					    s.areaCode AS areaCode,
+                        s.ebrStId AS ebrId,
+                        s.ebrStName AS ebrName,
+                        s.stationState AS ebrState,
+                        s.subResType AS ebrType,
+                        s.address AS ebrUrl,
+                        s.createTime,
+                        s.latitude,
+                        s.longitude,
+                        '' AS population,
+                        '' AS square,
+                        s.updateTime
+                    FROM
+                        bc_ebr_station s
+                    
+            ) ebr
+        WHERE
+            1 = 1
+        AND ebr.ebrId = #{ebrId}
+    </select>
+</mapper>

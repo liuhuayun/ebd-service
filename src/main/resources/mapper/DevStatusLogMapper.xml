@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.DevStatusLogMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.DevStatusLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="CHAR" property="id" />
+    <result column="sys_id" jdbcType="CHAR" property="sysId" />
+    <result column="org_id" jdbcType="CHAR" property="orgId" />
+    <result column="dev_sn" jdbcType="VARCHAR" property="devSn" />
+    <result column="dev_name" jdbcType="VARCHAR" property="devName" />
+    <result column="biz_status" jdbcType="BIT" property="bizStatus" />
+    <result column="hard_status" jdbcType="INTEGER" property="hardStatus" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="record_time" jdbcType="TIMESTAMP" property="recordTime" />
+    <result column="work_type" jdbcType="TINYINT" property="workType" />
+    <result column="work_uuid" jdbcType="VARCHAR" property="workUuid" />
+  </resultMap>
+</mapper>

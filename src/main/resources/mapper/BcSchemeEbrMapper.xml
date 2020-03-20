@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcSchemeEbrMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcSchemeEbr">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="ebrId" jdbcType="VARCHAR" property="ebrid" />
+    <result column="schemeId" jdbcType="VARCHAR" property="schemeid" />
+    <result column="ebrType" jdbcType="VARCHAR" property="ebrtype" />
+    <result column="ebrArea" jdbcType="VARCHAR" property="ebrarea" />
+  </resultMap>
+</mapper>

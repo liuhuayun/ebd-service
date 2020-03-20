@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbrBroadcastMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbrBroadcast">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="bsEbrId" jdbcType="VARCHAR" property="bsebrid" />
+    <result column="bsName" jdbcType="VARCHAR" property="bsname" />
+    <result column="bsUrl" jdbcType="VARCHAR" property="bsurl" />
+    <result column="subResType" jdbcType="VARCHAR" property="subrestype" />
+    <result column="platLevel" jdbcType="TINYINT" property="platlevel" />
+    <result column="bsType" jdbcType="VARCHAR" property="bstype" />
+    <result column="resType" jdbcType="VARCHAR" property="restype" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="square" jdbcType="DECIMAL" property="square" />
+    <result column="areaCode" jdbcType="VARCHAR" property="areacode" />
+    <result column="population" jdbcType="DECIMAL" property="population" />
+    <result column="languageCode" jdbcType="VARCHAR" property="languagecode" />
+    <result column="equipRoom" jdbcType="VARCHAR" property="equiproom" />
+    <result column="radioChannelName" jdbcType="VARCHAR" property="radiochannelname" />
+    <result column="radioFreq" jdbcType="DECIMAL" property="radiofreq" />
+    <result column="radioPower" jdbcType="INTEGER" property="radiopower" />
+    <result column="backup" jdbcType="BIT" property="backup" />
+    <result column="autoSwitch" jdbcType="BIT" property="autoswitch" />
+    <result column="remoteControl" jdbcType="BIT" property="remotecontrol" />
+    <result column="experiment" jdbcType="BIT" property="experiment" />
+    <result column="tvChannelName" jdbcType="VARCHAR" property="tvchannelname" />
+    <result column="tvFreq" jdbcType="INTEGER" property="tvfreq" />
+    <result column="programNum" jdbcType="VARCHAR" property="programnum" />
+    <result column="tvChannelNum" jdbcType="VARCHAR" property="tvchannelnum" />
+    <result column="bsState" jdbcType="BIT" property="bsstate" />
+    <result column="relatedPsEbrId" jdbcType="VARCHAR" property="relatedpsebrid" />
+    <result column="relatedRsEbrId" jdbcType="VARCHAR" property="relatedrsebrid" />
+    <result column="relatedAsEbrId" jdbcType="VARCHAR" property="relatedasebrid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="syncFlag" jdbcType="TINYINT" property="syncflag" />
+    <result column="statusSyncFlag" jdbcType="TINYINT" property="statussyncflag" />
+    <result column="belong" jdbcType="VARCHAR" property="belong" />
+    <result column="orgName" jdbcType="VARCHAR" property="orgname" />
+    <result column="orgType" jdbcType="VARCHAR" property="orgtype" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+</mapper>

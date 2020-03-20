@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.BcEbmBrdRecordMapper">
+  <resultMap id="BaseResultMap" type="cn.comtom.cbs.model.BcEbmBrdRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="brdItemId" jdbcType="VARCHAR" property="brditemid" />
+    <result column="resourceId" jdbcType="VARCHAR" property="resourceid" />
+    <result column="newEbmId" jdbcType="VARCHAR" property="newebmid" />
+    <result column="ebmId" jdbcType="VARCHAR" property="ebmid" />
+    <result column="msgType" jdbcType="TINYINT" property="msgtype" />
+    <result column="sendName" jdbcType="VARCHAR" property="sendname" />
+    <result column="senderCode" jdbcType="VARCHAR" property="sendercode" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+    <result column="eventType" jdbcType="VARCHAR" property="eventtype" />
+    <result column="severity" jdbcType="TINYINT" property="severity" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="languageCode" jdbcType="VARCHAR" property="languagecode" />
+    <result column="msgTitle" jdbcType="VARCHAR" property="msgtitle" />
+    <result column="msgDesc" jdbcType="VARCHAR" property="msgdesc" />
+    <result column="areaCode" jdbcType="VARCHAR" property="areacode" />
+    <result column="programNum" jdbcType="INTEGER" property="programnum" />
+    <result column="brdStateCode" jdbcType="TINYINT" property="brdstatecode" />
+    <result column="brdStateDesc" jdbcType="VARCHAR" property="brdstatedesc" />
+    <result column="coverageRate" jdbcType="DOUBLE" property="coveragerate" />
+    <result column="coverageAreaCode" jdbcType="VARCHAR" property="coverageareacode" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="syncFlag" jdbcType="TINYINT" property="syncflag" />
+    <result column="resBrdStat" jdbcType="VARCHAR" property="resbrdstat" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.comtom.cbs.dao.OperatorLogMapper">
+	<resultMap id="BaseResultMap" type="cn.comtom.cbs.model.OperatorLog">
+		<!-- WARNING - @mbg.generated -->
+		<id column="id" jdbcType="CHAR" property="id" />
+		<result column="sys_id" jdbcType="CHAR" property="sysId" />
+		<result column="org_id" jdbcType="CHAR" property="orgId" />
+		<result column="module" jdbcType="CHAR" property="module" />
+		<result column="operation" jdbcType="CHAR" property="operation" />
+		<result column="o_name" jdbcType="CHAR" property="oName" />
+		<result column="o_account" jdbcType="CHAR" property="oAccount" />
+		<result column="ip" jdbcType="CHAR" property="ip" />
+		<result column="ip_city" jdbcType="CHAR" property="ipCity" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="log_type" jdbcType="CHAR" property="logType" />
+		<result column="device_name" jdbcType="CHAR" property="deviceName" />
+		<result column="browser_name" jdbcType="VARCHAR" property="browserName" />
+		<result column="o_context" jdbcType="LONGVARCHAR" property="oContext" />
+	</resultMap>
+</mapper>
